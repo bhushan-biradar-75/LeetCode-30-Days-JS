@@ -28,4 +28,4 @@ let createHelloWorld = function()
     }
 }
 let result = createHelloWorld()
-result()
+console.log(result()); //Output - Hello World
