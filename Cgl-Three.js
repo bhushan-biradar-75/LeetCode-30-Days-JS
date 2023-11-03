@@ -26,8 +26,8 @@ var expect = function()
 {
     return{
         toBe: () => { if(val === val) return true },
-        notToBe: () => {if(val !== null )  }
+        notToBe: () => {if(val !== null ) return false}
     }
 }
 let a = 5
-let callExpect = expect.;
+let callExpect = expect(a);
