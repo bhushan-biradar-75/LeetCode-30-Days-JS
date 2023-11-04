@@ -22,12 +22,17 @@
 // Output: {"value": true}
 // Explanation: 5 !== null so this expression returns true.
 
-var expect = function()
+var expect = function(val)
 {
-    return{
-        toBe: () => { if(val === val) return true },
-        notToBe: () => {if(val !== null ) return false}
+    return {
+        toBe:(expectValue) => { if(val === expectValue) return true; else if(val !== expectValue) throw 'Not Equal'},
+        notToBe:(expectValue) => {if(val !== expectValue) return true; else if(val === expectValue) throw 'Equal' }
     }
 }
-let a = 5
+let a = 5;
+let expectValue = null;
 let callExpect = expect(a);
+
+console.log(callExpect.toBe(a)); //true
+console.log(callExpect.toBe(expectValue)); //uncaught Not Equal
+console.log(callExpect.notToBe(expectValue));
