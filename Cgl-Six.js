@@ -46,9 +46,9 @@ const filterValue = (item) => {
     const filterIndex = item.filter((ele , i) => i == 1)
     const Input = item.filter((ele) => ele) //Filter method return only truthy value
     return {filterValue, filterIndex, Input};
-}
+} 
 let item = [0,10,20,30]
-console.log(filterValue(item))//
+// console.log(filterValue(item))//
 // Output
 // {
 //     "filterValue": [
