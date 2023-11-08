@@ -1,3 +1,4 @@
+//2703 Return length of arugument passed
 // Write a function argumentsLength that returns the count of arguments passed to it.
  
 
@@ -26,12 +27,14 @@
 
 
 
-var arguments =function(){
+var arguments = function(args){
 let count = 0;
-    for(i = 0; i <= args; i++)
+console.log(args)
+    for(i = 0; i < args.length; i++)
     {
-        count+1;
+        count++;
     }
     return count;
 };
-let res = arguments()
+let res = arguments([null,2,{}])
+console.log(res);
