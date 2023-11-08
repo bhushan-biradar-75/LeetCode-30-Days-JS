@@ -38,7 +38,7 @@ let once = function(fn)
     {
         for(i = 0 ; i < args.length - 1 ; i++)
         {
-            console.log(args[i])
+            // console.log(args[i])
             return args[i]
     }   
 };
