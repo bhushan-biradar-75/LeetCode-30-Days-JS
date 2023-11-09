@@ -1,4 +1,3 @@
-// 2666 Allow one function call
 // Given a function fn, return a new function that is identical to the original function except that it ensures fn is called at most once.
 
 // The first time the returned function is called, it should return the same result as fn.
@@ -6,6 +5,7 @@
  
 
 // Example 1:
+
 // Input: fn = (a,b,c) => (a + b + c), calls = [[1,2,3],[2,3,6]]
 // Output: [{"calls":1,"value":6}]
 // Explanation:
@@ -29,26 +29,3 @@
 // 1 <= calls.length <= 10
 // 1 <= calls[i].length <= 100
 // 2 <= JSON.stringify(calls).length <= 1000
-
-
-// Output: [{"calls":1,"value":6}]
-let once = function()
-{
-    let isFirsttime = true;
-    return function(args)
-    {
-        if(isFirsttime)
-        {
-            isFirsttime = false;
-            let res = args[0].reduce((a , b) => { return a + b}) //calculation of sum
-            return res;
-        } else {
-            return undefined;
-        }
-};
-}
-let input = [[1,2,3]]
-let input2 = [[2,3,6]]
-let result = once()
-console.log(result(input))
-console.log(result(input2))
