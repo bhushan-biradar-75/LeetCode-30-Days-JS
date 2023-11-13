@@ -21,4 +21,17 @@
 // const limited = timeLimit(fn, t)
 // const start = performance.now()
 // let result;
-// try {
+
+
+var timeLimit = function(fn, t) {
+	return async function(...args) {
+         const originalFnPromise = fn(...args);
+
+        const timeoutPromise = new Promise((_, reject) => {
+            setTimeout(() => {
+                reject('Time Limit Exceeded')
+            }, t);
+        })
+        return Promise.race([originalFnPromise, timeoutPromise]);
+    }
+};
